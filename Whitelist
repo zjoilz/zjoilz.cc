@@ -1,16 +1,5 @@
 local whitelist = {
-    "738MrCheesePuff318", --Owner
-    "???", --Admin
-    "???", --Admin
-    "???", --Admin
-    "???", --Premium
-    "???", --Premium
-    "???", --Premium
-    "???", --Premium
-    "???", --Premium
-    "???", --Premium
-    "???", --Premium
-    "???" --Premium
+    "738MrCheesePuff318" --Owner
 }
 
 local playerName = game.Players.LocalPlayer.Name
