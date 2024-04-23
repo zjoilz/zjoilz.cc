@@ -14,6 +14,6 @@ for _, name in ipairs(whitelist) do
 end
 
 if isWhitelisted then
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/zjoilz/zjoilz.cc/main/Protected"))()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/zjoilz/zjoilz.cc/main/zjoilz.cc"))()
     game.Players.LocalPlayer:Kick("You are not Whitelisted..")
 end
