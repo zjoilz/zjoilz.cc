@@ -47,8 +47,8 @@ Circle.Thickness = 1
 
 
 
-game.Lighting.GlobalShadows = not Streamable.Main.DisableShadows
-if Streamable.Main.MuteBoomBox == true then 
+game.Lighting.GlobalShadows = not ZjoilzStreamable.Main.DisableShadows
+if ZjoilzStreamable.Main.MuteBoomBox == true then 
     for i,v in pairs(game.Players:GetChildren()) do 
         if v.Name ~= game.Players.LocalPlayer.Name then 
             if game.Players:FindFirstChild(v.Name) then 
@@ -66,66 +66,66 @@ local UpdateFOV = function ()
     if (not Circle) then
         return Circle
     end
-    Circle.Visible = Streamable.FOV["Visible"]
-    Circle.Radius = Streamable.FOV["Radius"] * 3
+    Circle.Visible = ZjoilzStreamable.FOV["Visible"]
+    Circle.Radius = ZjoilzStreamable.FOV["Radius"] * 3
     Circle.Position = Vector2.new(Mouse.X, Mouse.Y + (game:GetService("GuiService"):GetGuiInset().Y))
     Circle.Color = Circle.Color
     return Circle
 end
 RS.Heartbeat:Connect(UpdateFOV)
 
-if Streamable.FOV.Color == "red" then
+if ZjoilzStreamable.FOV.Color == "red" then
     Circle.Color = Color3.new(255, 0, 0)
-elseif Streamable.FOV.Color == "blue" then
+elseif ZjoilzStreamable.FOV.Color == "blue" then
     Circle.Color = Color3.new(0, 0, 255)
-elseif Streamable.FOV.Color == "green" then
+elseif ZjoilzStreamable.FOV.Color == "green" then
     Circle.Color = Color3.new(0, 255, 0)
-elseif Streamable.FOV.Color == "yellow" then
+elseif ZjoilzStreamable.FOV.Color == "yellow" then
     Circle.Color = Color3.new(255, 255, 0)
-elseif Streamable.FOV.Color == "purple" then
+elseif ZjoilzStreamable.FOV.Color == "purple" then
     Circle.Color = Color3.new(128, 0, 128)
-elseif Streamable.FOV.Color == "orange" then
+elseif ZjoilzStreamable.FOV.Color == "orange" then
     Circle.Color = Color3.new(255, 165, 0)
-elseif Streamable.FOV.Color == "pink" then
+elseif ZjoilzStreamable.FOV.Color == "pink" then
     Circle.Color = Color3.new(255, 192, 203)
-elseif Streamable.FOV.Color == "brown" then
+elseif ZjoilzStreamable.FOV.Color == "brown" then
     Circle.Color = Color3.new(165, 42, 42)
-elseif Streamable.FOV.Color == "black" then
+elseif ZjoilzStreamable.FOV.Color == "black" then
     Circle.Color = Color3.new(0, 0, 0)
-elseif Streamable.FOV.Color == "white" then
+elseif ZjoilzStreamable.FOV.Color == "white" then
     Circle.Color = Color3.new(255, 255, 255)
-elseif Streamable.FOV.Color == "gray" then
+elseif ZjoilzStreamable.FOV.Color == "gray" then
     Circle.Color = Color3.new(128, 128, 128)
-elseif Streamable.FOV.Color == "light blue" then
+elseif ZjoilzStreamable.FOV.Color == "light blue" then
     Circle.Color = Color3.new(173, 216, 230)
-elseif Streamable.FOV.Color == "maroon" then
+elseif ZjoilzStreamable.FOV.Color == "maroon" then
     Circle.Color = Color3.new(128, 0, 0)
-elseif Streamable.FOV.Color == "teal" then
+elseif ZjoilzStreamable.FOV.Color == "teal" then
     Circle.Color = Color3.new(0, 128, 128)
-elseif Streamable.FOV.Color == "lime" then
+elseif ZjoilzStreamable.FOV.Color == "lime" then
     Circle.Color = Color3.new(0, 255, 0)
-elseif Streamable.FOV.Color == "magenta" then
+elseif ZjoilzStreamable.FOV.Color == "magenta" then
     Circle.Color = Color3.new(255, 0, 255)
-elseif Streamable.FOV.Color == "turquoise" then
+elseif ZjoilzStreamable.FOV.Color == "turquoise" then
     Circle.Color = Color3.new(64, 224, 208)
 end
 
-if Streamable.Macro.Enabled then
-    if Streamable.Macro.Mode == "ThirdPerson" then
-        getgenv().macrokey = Streamable.Macro.Keybind
-        getgenv().macrospeed = Streamable.Macro.Speed -- the lower fps u have the higher u put this
+if ZjoilzStreamable.Macro.Enabled then
+    if ZjoilzStreamable.Macro.Mode == "ThirdPerson" then
+        getgenv().macrokey = ZjoilzStreamable.Macro.Keybind
+        getgenv().macrospeed = ZjoilzStreamable.Macro.Speed -- the lower fps u have the higher u put this
         getgenv().macrotype = "normal" -- normal or mouse
         loadstring(game:HttpGet("https://raw.githubusercontent.com/FederalW/scripts/main/macro"))()
-    elseif Streamable.Macro.Mode == "FirstPerson" then -- yeah i skidded feds go cry
-        getgenv().macrokey = Streamable.Macro.Keybind
-        getgenv().macrospeed = Streamable.Macro.Speed -- the lower fps u have the higher u put this
+    elseif ZjoilzStreamable.Macro.Mode == "FirstPerson" then -- yeah i skidded feds go cry
+        getgenv().macrokey = ZjoilzStreamable.Macro.Keybind
+        getgenv().macrospeed = ZjoilzStreamable.Macro.Speed -- the lower fps u have the higher u put this
         getgenv().macrotype = "mouse" -- normal or mouse
         loadstring(game:HttpGet("https://raw.githubusercontent.com/FederalW/scripts/main/macro"))()
     end
 end
 
 
-if Streamable.InventorySorter.Enabled == true then 
+if ZjoilzStreamable.InventorySorter.Enabled == true then 
 local services = {
    ["Players"] = game:GetService("Players"),
    ["RunService"] = game:GetService("RunService"),
@@ -157,9 +157,9 @@ local function update()
            tool.Parent = game
        end
    end
-   for x=1,#Streamable.InventorySorter.List do
+   for x=1,#ZjoilzStreamable.InventorySorter.List do
        for i=1,#temp do
-           if string.sub(string.lower(tostring(temp[i])),1,string.len(string.lower(Streamable.InventorySorter.List[x]))) == string.lower(Streamable.InventorySorter.List[x]) then
+           if string.sub(string.lower(tostring(temp[i])),1,string.len(string.lower(ZjoilzStreamable.InventorySorter.List[x]))) == string.lower(ZjoilzStreamable.InventorySorter.List[x]) then
                temp[i].Parent = variables["LocalPlayer"].Backpack
                wait(0.105)
            end
@@ -171,7 +171,7 @@ local function update()
    end
 end
 Mouse.KeyDown:Connect(function(key)
-    if key == Streamable.InventorySorter.Keybind and Streamable.InventorySorter.Enabled then
+    if key == ZjoilzStreamable.InventorySorter.Keybind and ZjoilzStreamable.InventorySorter.Enabled then
         update()
     end
 end)
@@ -179,7 +179,7 @@ end
 
 
 
-if Streamable.Main.AutoLowGFX then
+if ZjoilzStreamable.Main.AutoLowGFX then
     for _,v in pairs(workspace:GetDescendants()) do
     if v.ClassName == "Part"
     or v.ClassName == "SpawnLocation"
@@ -276,12 +276,12 @@ local GetClosestBodyPart = function (character)
     end
     return BodyPart
 end
-if Streamable.Silent.UseKeybind then
+if ZjoilzStreamable.Silent.UseKeybind then
     Mouse.KeyDown:Connect(function(key)
-        if key == Streamable.Silent.Keybind and Streamable.Silent.Enabled then
-            getgenv().Streamable.Silent.Enabled = false
-        elseif key == Streamable.Silent.Keybind and not Streamable.Silent.Enabled then
-            getgenv().Streamable.Silent.Enabled = true
+        if key == ZjoilzStreamable.Silent.Keybind and ZjoilzStreamable.Silent.Enabled then
+            getgenv().ZjoilzStreamable.Silent.Enabled = false
+        elseif key == ZjoilzStreamable.Silent.Keybind and not ZjoilzStreamable.Silent.Enabled then
+            getgenv().ZjoilzStreamable.Silent.Enabled = true
         end
     end)
 end
@@ -293,8 +293,8 @@ local Prey
 task.spawn(function ()
     while task.wait() do
         if Prey then
-            if Streamable.Silent.Enabled and Streamable.Silent.ClosestPart == true then
-                Streamable.Silent["Part"] = tostring(GetClosestBodyPart(Prey.Character))
+            if ZjoilzStreamable.Silent.Enabled and ZjoilzStreamable.Silent.ClosestPart == true then
+                ZjoilzStreamable.Silent["Part"] = tostring(GetClosestBodyPart(Prey.Character))
             end
         end
     end
@@ -305,13 +305,13 @@ local backupindex = grmt.__index
 setreadonly(grmt, false)
 
 grmt.__index = newcclosure(function(self, v)
-    if (Streamable.Silent.Enabled and Mouse and tostring(v) == "Hit") then
+    if (ZjoilzStreamable.Silent.Enabled and Mouse and tostring(v) == "Hit") then
 
         Prey = ClosestPlrFromMouse()
 
         if Prey then
-            local endpoint = game.Players[tostring(Prey)].Character[Streamable.Silent["Part"]].CFrame + (
-                game.Players[tostring(Prey)].Character[Streamable.Silent["Part"]].Velocity * Streamable.Silent.Prediction
+            local endpoint = game.Players[tostring(Prey)].Character[ZjoilzStreamable.Silent["Part"]].CFrame + (
+                game.Players[tostring(Prey)].Character[ZjoilzStreamable.Silent["Part"]].Velocity * ZjoilzStreamable.Silent.Prediction
             )
             return (tostring(v) == "Hit" and endpoint)
         end
@@ -319,7 +319,7 @@ grmt.__index = newcclosure(function(self, v)
     return backupindex(self, v)
 end)
 
-if Streamable.Macro.AntiFling then
+if ZjoilzStreamable.Macro.AntiFling then
 -- // Constants \\ --
 -- [ Services ] --
 local Services = setmetatable({}, {__index = function(Self, Index)
@@ -408,19 +408,19 @@ end
 
 
 
-if Streamable.Aimbot.Enabled then
-getgenv().AimPart = Streamable.Aimbot.Part
-getgenv().AimlockKey = Streamable.Aimbot.Keybind
+if ZjoilzStreamable.Aimbot.Enabled then
+getgenv().AimPart = ZjoilzStreamable.Aimbot.Part
+getgenv().AimlockKey = ZjoilzStreamable.Aimbot.Keybind
 getgenv().AimRadius = 30
-getgenv().ThirdPerson = Streamable.Aimbot.ThirdPerson
-getgenv().FirstPerson = Streamable.Aimbot.FirstPerson
+getgenv().ThirdPerson = ZjoilzStreamable.Aimbot.ThirdPerson
+getgenv().FirstPerson = ZjoilzStreamable.Aimbot.FirstPerson
 getgenv().TeamCheck = false
-getgenv().PredictMovement = Streamable.Aimbot.UsePrediction
-getgenv().PredictionVelocity = Streamable.Aimbot.Prediction
-getgenv().Smoothness = Streamable.Aimbot.Smoothness
-getgenv().SmoothnessAmount = Streamable.Aimbot.Amount
-getgenv().DeathCheck = Streamable.Aimbot.Checks.DeathCheck
-getgenv().WallCheck = Streamable.Aimbot.Checks.WallCheck -- Add this line
+getgenv().PredictMovement = ZjoilzStreamable.Aimbot.UsePrediction
+getgenv().PredictionVelocity = ZjoilzStreamable.Aimbot.Prediction
+getgenv().Smoothness = ZjoilzStreamable.Aimbot.Smoothness
+getgenv().SmoothnessAmount = ZjoilzStreamable.Aimbot.Amount
+getgenv().DeathCheck = ZjoilzStreamable.Aimbot.Checks.DeathCheck
+getgenv().WallCheck = ZjoilzStreamable.Aimbot.Checks.WallCheck -- Add this line
 
 local Players, Uis, RService, SGui = game:GetService"Players", game:GetService"UserInputService", game:GetService"RunService", game:GetService"StarterGui";
 local Client, Mouse, Camera, CF, RNew, Vec3, Vec2 = Players.LocalPlayer, Players.LocalPlayer:GetMouse(), workspace.CurrentCamera, CFrame.new, Ray.new, Vector3.new, Vector2.new;
@@ -568,13 +568,13 @@ RService.RenderStepped:Connect(function()
                 return
             end
             
-            if Streamable.Aimbot.Checks.VisibleCheck then
+            if ZjoilzStreamable.Aimbot.Checks.VisibleCheck then
                 if AimlockTarget and not IsPartVisible(AimlockTarget.Character.HumanoidRootPart, Target.Character) then
                     AimlockTarget = nil
                     return
                 end
             end
-            if Streamable.Silent.Checks.OwnDeathCheck then
+            if ZjoilzStreamable.Silent.Checks.OwnDeathCheck then
                 local LocalPlayer = game.Players.LocalPlayer
                 local LocalPlayerHealth = LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("Humanoid") and LocalPlayer.Character.Humanoid.Health or 0
 
@@ -620,7 +620,7 @@ end
 return inst
 end
 
-if Streamable.Resolver.AntiAimViewer == true then
+if ZjoilzStreamable.Resolver.AntiAimViewer == true then
     print('aav')
     for i, v in pairs(game.Players:GetPlayers()) do
     if v ~= Client and v.Character and v.Character:FindFirstChild("Head") and  v.Character:FindFirstChild("HumanoidRootPart")  then
@@ -631,60 +631,60 @@ end
 end
 
 game:GetService("RunService").Heartbeat:Connect(function() 
-        if Streamable.AutoPred.Enabled then
+        if ZjoilzStreamable.AutoPred.Enabled then
             local ping = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString()
             local pingValue = string.split(ping, " ")[1]
             local pingNumber = tonumber(pingValue)
-            if Streamable.AutoPred.Silent.Enabled == true then
+            if ZjoilzStreamable.AutoPred.Silent.Enabled == true then
                 if pingNumber > 310 then
-                    getgenv().Streamable.Silent.Prediction = 0.16780
+                    getgenv().ZjoilzStreamable.Silent.Prediction = 0.16780
                 elseif pingNumber > 260 then
-                    getgenv().Streamable.Silent.Prediction = 0.1651
+                    getgenv().ZjoilzStreamable.Silent.Prediction = 0.1651
                 elseif pingNumber > 210 then
-                    getgenv().Streamable.Silent.Prediction = 0.16942
+                    getgenv().ZjoilzStreamable.Silent.Prediction = 0.16942
                 elseif pingNumber > 200 then
-                    getgenv().Streamable.Silent.Prediction = Streamable.AutoPred.Silent.P200
+                    getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.AutoPred.Silent.P200
                 elseif pingNumber > 190 then
-                    getgenv().Streamable.Silent.Prediction = Streamable.AutoPred.Silent.P190
+                    getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.AutoPred.Silent.P190
                 elseif pingNumber > 180 then
-                    getgenv().Streamable.Silent.Prediction = Streamable.AutoPred.Silent.P180
+                    getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.AutoPred.Silent.P180
                 elseif pingNumber > 170 then
-                    getgenv().Streamable.Silent.Prediction = Streamable.AutoPred.Silent.P170
+                    getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.AutoPred.Silent.P170
                 elseif pingNumber > 160 then
-                    getgenv().Streamable.Silent.Prediction = Streamable.AutoPred.Silent.P160
+                    getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.AutoPred.Silent.P160
                 elseif pingNumber > 150 then
-                    getgenv().Streamable.Silent.Prediction = Streamable.AutoPred.Silent.P150
+                    getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.AutoPred.Silent.P150
                 elseif pingNumber > 140 then
-                    getgenv().Streamable.Silent.Prediction = Streamable.AutoPred.Silent.P140
+                    getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.AutoPred.Silent.P140
                 elseif pingNumber > 130 then
-                    getgenv().Streamable.Silent.Prediction = Streamable.AutoPred.Silent.P130
+                    getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.AutoPred.Silent.P130
                 elseif pingNumber > 120 then
-                    getgenv().Streamable.Silent.Prediction = Streamable.AutoPred.Silent.P120
+                    getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.AutoPred.Silent.P120
                 elseif pingNumber > 110 then
-                    getgenv().Streamable.Silent.Prediction = Streamable.AutoPred.Silent.P110
+                    getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.AutoPred.Silent.P110
                 elseif pingNumber > 100 then
-                    getgenv().Streamable.Silent.Prediction = Streamable.AutoPred.Silent.P100
+                    getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.AutoPred.Silent.P100
                 elseif pingNumber > 90 then
-                    getgenv().Streamable.Silent.Prediction = Streamable.AutoPred.Silent.P90
+                    getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.AutoPred.Silent.P90
                 elseif pingNumber > 80 then
-                    getgenv().Streamable.Silent.Prediction = Streamable.AutoPred.Silent.P80
+                    getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.AutoPred.Silent.P80
                 elseif pingNumber > 70 then
-                    getgenv().Streamable.Silent.Prediction = Streamable.AutoPred.Silent.P70
+                    getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.AutoPred.Silent.P70
                 elseif pingNumber > 60 then
-                    getgenv().Streamable.Silent.Prediction = Streamable.AutoPred.Silent.P60
+                    getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.AutoPred.Silent.P60
                 elseif pingNumber > 50 then
-                    getgenv().Streamable.Silent.Prediction = Streamable.AutoPred.Silent.P50
+                    getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.AutoPred.Silent.P50
                 elseif pingNumber > 40 then
-                    getgenv().Streamable.Silent.Prediction = Streamable.AutoPred.Silent.P40
+                    getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.AutoPred.Silent.P40
                 elseif pingNumber > 30 then
-                    getgenv().Streamable.Silent.Prediction = Streamable.AutoPred.Silent.P30
+                    getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.AutoPred.Silent.P30
                 elseif pingNumber > 20 then
-                    getgenv().Streamable.Silent.Prediction = Streamable.AutoPred.Silent.P20
+                    getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.AutoPred.Silent.P20
                 elseif pingNumber > 10 then
-                    getgenv().Streamable.Silent.Prediction = Streamable.AutoPred.Silent.P10
+                    getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.AutoPred.Silent.P10
                 end
             end
-            if Streamable.AutoPred.Aimbot.Enabled == true then
+            if ZjoilzStreamable.AutoPred.Aimbot.Enabled == true then
                 if pingNumber > 310 then
                     getgenv().PredictionVelocity = 0.16780
                 elseif pingNumber > 260 then
@@ -692,45 +692,45 @@ game:GetService("RunService").Heartbeat:Connect(function()
                 elseif pingNumber > 210 then
                     getgenv().PredictionVelocity = 0.16942
                 elseif pingNumber > 200 then
-                    getgenv().PredictionVelocity = Streamable.AutoPred.Aimbot.P200
+                    getgenv().PredictionVelocity = ZjoilzStreamable.AutoPred.Aimbot.P200
                 elseif pingNumber > 190 then
-                    getgenv().PredictionVelocity = Streamable.AutoPred.Aimbot.P190
+                    getgenv().PredictionVelocity = ZjoilzStreamable.AutoPred.Aimbot.P190
                 elseif pingNumber > 180 then
-                    getgenv().PredictionVelocity = Streamable.AutoPred.Aimbot.P180
+                    getgenv().PredictionVelocity = ZjoilzStreamable.AutoPred.Aimbot.P180
                 elseif pingNumber > 170 then
-                    getgenv().PredictionVelocity = Streamable.AutoPred.Aimbot.P170
+                    getgenv().PredictionVelocity = ZjoilzStreamable.AutoPred.Aimbot.P170
                 elseif pingNumber > 160 then
-                    getgenv().PredictionVelocity = Streamable.AutoPred.Aimbot.P160
+                    getgenv().PredictionVelocity = ZjoilzStreamable.AutoPred.Aimbot.P160
                 elseif pingNumber > 150 then
-                    getgenv().PredictionVelocity = Streamable.AutoPred.Aimbot.P150
+                    getgenv().PredictionVelocity = ZjoilzStreamable.AutoPred.Aimbot.P150
                 elseif pingNumber > 140 then
-                    getgenv().PredictionVelocity = Streamable.AutoPred.Aimbot.P140
+                    getgenv().PredictionVelocity = ZjoilzStreamable.AutoPred.Aimbot.P140
                 elseif pingNumber > 130 then
-                    getgenv().PredictionVelocity = Streamable.AutoPred.Aimbot.P130
+                    getgenv().PredictionVelocity = ZjoilzStreamable.AutoPred.Aimbot.P130
                 elseif pingNumber > 120 then
-                    getgenv().PredictionVelocity = Streamable.AutoPred.Aimbot.P120
+                    getgenv().PredictionVelocity = ZjoilzStreamable.AutoPred.Aimbot.P120
                 elseif pingNumber > 110 then
-                    getgenv().PredictionVelocity = Streamable.AutoPred.Aimbot.P110
+                    getgenv().PredictionVelocity = ZjoilzStreamable.AutoPred.Aimbot.P110
                 elseif pingNumber > 100 then
-                    getgenv().PredictionVelocity = Streamable.AutoPred.Aimbot.P100
+                    getgenv().PredictionVelocity = ZjoilzStreamable.AutoPred.Aimbot.P100
                 elseif pingNumber > 90 then
-                    getgenv().PredictionVelocity = Streamable.AutoPred.Aimbot.P90
+                    getgenv().PredictionVelocity = ZjoilzStreamable.AutoPred.Aimbot.P90
                 elseif pingNumber > 80 then
-                    getgenv().PredictionVelocity = Streamable.AutoPred.Aimbot.P80
+                    getgenv().PredictionVelocity = ZjoilzStreamable.AutoPred.Aimbot.P80
                 elseif pingNumber > 70 then
-                    getgenv().PredictionVelocity = Streamable.AutoPred.Aimbot.P70
+                    getgenv().PredictionVelocity = ZjoilzStreamable.AutoPred.Aimbot.P70
                 elseif pingNumber > 60 then
-                    getgenv().PredictionVelocity = Streamable.AutoPred.Aimbot.P60
+                    getgenv().PredictionVelocity = ZjoilzStreamable.AutoPred.Aimbot.P60
                 elseif pingNumber > 50 then
-                    getgenv().PredictionVelocity = Streamable.AutoPred.Aimbot.P50
+                    getgenv().PredictionVelocity = ZjoilzStreamable.AutoPred.Aimbot.P50
                 elseif pingNumber > 40 then
-                    getgenv().PredictionVelocity = Streamable.AutoPred.Aimbot.P40
+                    getgenv().PredictionVelocity = ZjoilzStreamable.AutoPred.Aimbot.P40
                 elseif pingNumber > 30 then
-                    getgenv().PredictionVelocity = Streamable.AutoPred.Aimbot.P30
+                    getgenv().PredictionVelocity = ZjoilzStreamable.AutoPred.Aimbot.P30
                 elseif pingNumber > 20 then
-                    getgenv().PredictionVelocity = Streamable.AutoPred.Aimbot.P20
+                    getgenv().PredictionVelocity = ZjoilzStreamable.AutoPred.Aimbot.P20
                 elseif pingNumber > 10 then
-                    getgenv().PredictionVelocity = Streamable.AutoPred.Aimbot.P10
+                    getgenv().PredictionVelocity = ZjoilzStreamable.AutoPred.Aimbot.P10
                 end
             end
         end
@@ -739,11 +739,11 @@ game:GetService("RunService").Heartbeat:Connect(function()
 
 -- Define the function to find the target distance
 local function find_target_mag()
-    if Streamable.Range.Enabled then
+    if ZjoilzStreamable.Range.Enabled then
     Prey = ClosestPlrFromMouse()
     local preyPlayer = game.Players:FindFirstChild(tostring(Prey))
-    local partName = Streamable.Silent["Part"]
-    local prediction = Streamable.Silent.Prediction
+    local partName = ZjoilzStreamable.Silent["Part"]
+    local prediction = ZjoilzStreamable.Silent.Prediction
     if Prey then
         local TargetHealth = Target.Character:FindFirstChild("Humanoid") and Target.Character.Humanoid.Health or 0
         if TargetHealth < 2 then
@@ -771,8 +771,8 @@ local RunService = game:GetService("RunService")
 local function manage_range()
     Prey = ClosestPlrFromMouse()
     local preyPlayer = game.Players:FindFirstChild(tostring(Prey))
-    local partName = Streamable.Silent["Part"]
-    local prediction = Streamable.Silent.Prediction
+    local partName = ZjoilzStreamable.Silent["Part"]
+    local prediction = ZjoilzStreamable.Silent.Prediction
 
     if preyPlayer and preyPlayer.Character and preyPlayer.Character:FindFirstChild(partName) then
         local preyPart = preyPlayer.Character[partName]
@@ -781,115 +781,115 @@ local function manage_range()
             local preyPosition = preyPart.CFrame.Position + (preyPart.Velocity * prediction)
             local clientPosition = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
             local distance = (preyPosition - clientPosition).Magnitude
-            if distance < Streamable.Range.CloseDistance then
-                if Streamable.Range.FOV.Enabled then
-                    getgenv().Streamable.FOV.Radius = Streamable.Range.FOV.Close
+            if distance < ZjoilzStreamable.Range.CloseDistance then
+                if ZjoilzStreamable.Range.FOV.Enabled then
+                    getgenv().ZjoilzStreamable.FOV.Radius = ZjoilzStreamable.Range.FOV.Close
                 end
-                if Streamable.Range.Smoothness.Enabled then
-                    getgenv().SmoothnessAmount = Streamable.Range.Smoothness.Close
+                if ZjoilzStreamable.Range.Smoothness.Enabled then
+                    getgenv().SmoothnessAmount = ZjoilzStreamable.Range.Smoothness.Close
                 end
-                if Streamable.Range.Prediction.Enabled then
+                if ZjoilzStreamable.Range.Prediction.Enabled then
                     local ping = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString()
                     local pingValue = string.split(ping, " ")[1]
                     local pingNumber = tonumber(pingValue)
                     if pingNumber > 140 then
-                        getgenv().Streamable.Silent.Prediction = Streamable.Range.Prediction.Close.P140_200
+                        getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.Range.Prediction.Close.P140_200
                     elseif pingNumber > 120 then
-                        getgenv().Streamable.Silent.Prediction = Streamable.Range.Prediction.Close.P120_140
+                        getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.Range.Prediction.Close.P120_140
                     elseif pingNumber > 90 then
-                        getgenv().Streamable.Silent.Prediction = Streamable.Range.Prediction.Close.P90_120
+                        getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.Range.Prediction.Close.P90_120
                     elseif pingNumber > 80 then
-                        getgenv().Streamable.Silent.Prediction = Streamable.Range.Prediction.Close.P80_90
+                        getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.Range.Prediction.Close.P80_90
                     elseif pingNumber > 70 then
-                        getgenv().Streamable.Silent.Prediction = Streamable.Range.Prediction.Close.P70_80
+                        getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.Range.Prediction.Close.P70_80
                     elseif pingNumber > 60 then
-                        getgenv().Streamable.Silent.Prediction = Streamable.Range.Prediction.Close.P60_70
+                        getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.Range.Prediction.Close.P60_70
                     elseif pingNumber > 50 then
-                        getgenv().Streamable.Silent.Prediction = Streamable.Range.Prediction.Close.P50_60
+                        getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.Range.Prediction.Close.P50_60
                     elseif pingNumber > 40 then
-                        getgenv().Streamable.Silent.Prediction = Streamable.Range.Prediction.Close.P40_50
+                        getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.Range.Prediction.Close.P40_50
                     elseif pingNumber > 30 then
-                        getgenv().Streamable.Silent.Prediction = Streamable.Range.Prediction.Close.P30_40
+                        getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.Range.Prediction.Close.P30_40
                     elseif pingNumber > 20 then
-                        getgenv().Streamable.Silent.Prediction = Streamable.Range.Prediction.Close.P20_30
+                        getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.Range.Prediction.Close.P20_30
                     elseif pingNumber > 10 then
-                        getgenv().Streamable.Silent.Prediction = Streamable.Range.Prediction.Close.P10
+                        getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.Range.Prediction.Close.P10
                     end
                 end
-            elseif distance < Streamable.Range.MidDistance then
-                if Streamable.Range.FOV.Enabled then
-                    getgenv().Streamable.FOV.Radius = Streamable.Range.FOV.Mid
+            elseif distance < ZjoilzStreamable.Range.MidDistance then
+                if ZjoilzStreamable.Range.FOV.Enabled then
+                    getgenv().ZjoilzStreamable.FOV.Radius = ZjoilzStreamable.Range.FOV.Mid
                 end
-                if Streamable.Range.Smoothness.Enabled then
-                    getgenv().SmoothnessAmount = Streamable.Range.Smoothness.Mid
+                if ZjoilzStreamable.Range.Smoothness.Enabled then
+                    getgenv().SmoothnessAmount = ZjoilzStreamable.Range.Smoothness.Mid
                 end
-                if Streamable.Range.Prediction.Enabled then
+                if ZjoilzStreamable.Range.Prediction.Enabled then
                     local ping = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString()
                     local pingValue = string.split(ping, " ")[1]
                     local pingNumber = tonumber(pingValue)
                     if pingNumber > 140 then
-                        getgenv().Streamable.Silent.Prediction = Streamable.Range.Prediction.Mid.P140_200
+                        getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.Range.Prediction.Mid.P140_200
                     elseif pingNumber > 120 then
-                        getgenv().Streamable.Silent.Prediction = Streamable.Range.Prediction.Mid.P120_140
+                        getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.Range.Prediction.Mid.P120_140
                     elseif pingNumber > 90 then
-                        getgenv().Streamable.Silent.Prediction = Streamable.Range.Prediction.Mid.P90_120
+                        getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.Range.Prediction.Mid.P90_120
                     elseif pingNumber > 80 then
-                        getgenv().Streamable.Silent.Prediction = Streamable.Range.Prediction.Mid.P80_90
+                        getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.Range.Prediction.Mid.P80_90
                     elseif pingNumber > 70 then
-                        getgenv().Streamable.Silent.Prediction = Streamable.Range.Prediction.Mid.P70_80
+                        getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.Range.Prediction.Mid.P70_80
                     elseif pingNumber > 60 then
-                        getgenv().Streamable.Silent.Prediction = Streamable.Range.Prediction.Mid.P60_70
+                        getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.Range.Prediction.Mid.P60_70
                     elseif pingNumber > 50 then
-                        getgenv().Streamable.Silent.Prediction = Streamable.Range.Prediction.Mid.P50_60
+                        getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.Range.Prediction.Mid.P50_60
                     elseif pingNumber > 40 then
-                        getgenv().Streamable.Silent.Prediction = Streamable.Range.Prediction.Mid.P40_50
+                        getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.Range.Prediction.Mid.P40_50
                     elseif pingNumber > 30 then
-                        getgenv().Streamable.Silent.Prediction = Streamable.Range.Prediction.Mid.P30_40
+                        getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.Range.Prediction.Mid.P30_40
                     elseif pingNumber > 20 then
-                        getgenv().Streamable.Silent.Prediction = Streamable.Range.Prediction.Mid.P20_30
+                        getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.Range.Prediction.Mid.P20_30
                     elseif pingNumber > 10 then
-                        getgenv().Streamable.Silent.Prediction = Streamable.Range.Prediction.Mid.P10
+                        getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.Range.Prediction.Mid.P10
                     end
                 end
-            elseif distance < Streamable.Range.FarDistance then
-                if Streamable.Range.FOV.Enabled then
-                    getgenv().Streamable.FOV.Radius = Streamable.Range.FOV.Far
+            elseif distance < ZjoilzStreamable.Range.FarDistance then
+                if ZjoilzStreamable.Range.FOV.Enabled then
+                    getgenv().ZjoilzStreamable.FOV.Radius = ZjoilzStreamable.Range.FOV.Far
                 end
-                if Streamable.Range.Smoothness.Enabled then
-                    getgenv().SmoothnessAmount = Streamable.Range.Smoothness.Far
+                if ZjoilzStreamable.Range.Smoothness.Enabled then
+                    getgenv().SmoothnessAmount = ZjoilzStreamable.Range.Smoothness.Far
                 end
-                if Streamable.Range.Prediction.Enabled then
+                if ZjoilzStreamable.Range.Prediction.Enabled then
                     local ping = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString()
                     local pingValue = string.split(ping, " ")[1]
                     local pingNumber = tonumber(pingValue)
                     if pingNumber > 140 then
-                        getgenv().Streamable.Silent.Prediction = Streamable.Range.Prediction.Far.P140_200
+                        getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.Range.Prediction.Far.P140_200
                     elseif pingNumber > 120 then
-                        getgenv().Streamable.Silent.Prediction = Streamable.Range.Prediction.Far.P120_140
+                        getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.Range.Prediction.Far.P120_140
                     if pingNumber > 90 then
-                        getgenv().Streamable.Silent.Prediction = Streamable.Range.Prediction.Far.P90_120
+                        getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.Range.Prediction.Far.P90_120
                     elseif pingNumber > 80 then
-                        getgenv().Streamable.Silent.Prediction = Streamable.Range.Prediction.Far.P80_90
+                        getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.Range.Prediction.Far.P80_90
                     elseif pingNumber > 70 then
-                        getgenv().Streamable.Silent.Prediction = Streamable.Range.Prediction.Far.P70_80
+                        getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.Range.Prediction.Far.P70_80
                     elseif pingNumber > 60 then
-                        getgenv().Streamable.Silent.Prediction = Streamable.Range.Prediction.Far.P60_70
+                        getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.Range.Prediction.Far.P60_70
                     elseif pingNumber > 50 then
-                        getgenv().Streamable.Silent.Prediction = Streamable.Range.Prediction.Far.P50_60
+                        getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.Range.Prediction.Far.P50_60
                     elseif pingNumber > 40 then
-                        getgenv().Streamable.Silent.Prediction = Streamable.Range.Prediction.Far.P40_50
+                        getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.Range.Prediction.Far.P40_50
                     elseif pingNumber > 30 then
-                        getgenv().Streamable.Silent.Prediction = Streamable.Range.Prediction.Far.P30_40
+                        getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.Range.Prediction.Far.P30_40
                     elseif pingNumber > 20 then
-                        getgenv().Streamable.Silent.Prediction = Streamable.Range.Prediction.Far.P20_30
+                        getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.Range.Prediction.Far.P20_30
                     elseif pingNumber > 10 then
-                        getgenv().Streamable.Silent.Prediction = Streamable.Range.Prediction.Far.P10_20
+                        getgenv().ZjoilzStreamable.Silent.Prediction = ZjoilzStreamable.Range.Prediction.Far.P10_20
                     end
                 end
             else
-                getgenv().Streamable.Silent.Prediction = getgenv().Streamable.Range.Prediction.Far
-                getgenv().Streamable.FOV.Radius = getgenv().Streamable.Range.Smoothness.Far
-                getgenv().SmoothnessAmount = getgenv().Streamable.Range.Smoothness.Far
+                getgenv().ZjoilzStreamable.Silent.Prediction = getgenv().ZjoilzStreamable.Range.Prediction.Far
+                getgenv().ZjoilzStreamable.FOV.Radius = getgenv().ZjoilzStreamable.Range.Smoothness.Far
+                getgenv().SmoothnessAmount = getgenv().ZjoilzStreamable.Range.Smoothness.Far
             end
         end
     end
@@ -923,11 +923,11 @@ local Script = {Functions = {}}
     end
     RS.RenderStepped:Connect(function()
     if Script.Functions.getEquippedWeaponName() ~= nil then
-        local WeaponSettings = getgenv().Streamable.GunFOV[Script.Functions.getEquippedWeaponName()]
-        if WeaponSettings ~= nil and getgenv().Streamable.GunFOV.Enabled == true then
-            getgenv().Streamable.FOV.Radius = WeaponSettings.FOV
+        local WeaponSettings = getgenv().ZjoilzStreamable.GunFOV[Script.Functions.getEquippedWeaponName()]
+        if WeaponSettings ~= nil and getgenv().ZjoilzStreamable.GunFOV.Enabled == true then
+            getgenv().ZjoilzStreamable.FOV.Radius = WeaponSettings.FOV
         else
-            getgenv().Streamable.FOV.Radius = getgenv().Streamable.FOV.Radius
+            getgenv().ZjoilzStreamable.FOV.Radius = getgenv().ZjoilzStreamable.FOV.Radius
         end
     end
 end)
@@ -936,8 +936,8 @@ end)
 
 game:GetService("UserInputService").InputBegan:Connect(function(key, gp)
     if not gp then 
-        if key.KeyCode == Streamable.Emotes.LayKey then 
-            if Streamable.Emotes.Lay then 
+        if key.KeyCode == ZjoilzStreamable.Emotes.LayKey then 
+            if ZjoilzStreamable.Emotes.Lay then 
                 local Lay = Instance.new("Animation")
                 Lay.AnimationId = AnimationIds.Lay
                 local LayTrack = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Lay)
@@ -947,8 +947,8 @@ game:GetService("UserInputService").InputBegan:Connect(function(key, gp)
                 end)
             end
         end
-        if key.KeyCode == Streamable.Emotes.GreetKey then
-            if Streamable.Emotes.Greet then 
+        if key.KeyCode == ZjoilzStreamable.Emotes.GreetKey then
+            if ZjoilzStreamable.Emotes.Greet then 
                 local Greet = Instance.new("Animation")
                 Greet.AnimationId = AnimationIds.Greet
                 local GreetTrack = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Greet)
@@ -958,8 +958,8 @@ game:GetService("UserInputService").InputBegan:Connect(function(key, gp)
                 end)
             end
         end
-        if key.KeyCode == Streamable.Emotes.SpeedKey then
-            if Streamable.Emotes.Speed then 
+        if key.KeyCode == ZjoilzStreamable.Emotes.SpeedKey then
+            if ZjoilzStreamable.Emotes.Speed then 
                 local Speed = Instance.new("Animation")
                 Speed.AnimationId = AnimationIds.Speed
                 local SppedTrack = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Speed)
@@ -969,8 +969,8 @@ game:GetService("UserInputService").InputBegan:Connect(function(key, gp)
                 end)
             end
         end
-        if key.KeyCode == Streamable.Emotes.SturdyKey then
-            if Streamable.Emotes.Sturdy then 
+        if key.KeyCode == ZjoilzStreamable.Emotes.SturdyKey then
+            if ZjoilzStreamable.Emotes.Sturdy then 
                 local Sturdy = Instance.new("Animation")
                 Sturdy.AnimationId = AnimationIds.Sturdy
                 local SturdyTrack = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Sturdy)
@@ -980,8 +980,8 @@ game:GetService("UserInputService").InputBegan:Connect(function(key, gp)
                 end)
             end
         end
-        if key.KeyCode == Streamable.Emotes.GriddyKey then
-            if Streamable.Emotes.Griddy then 
+        if key.KeyCode == ZjoilzStreamable.Emotes.GriddyKey then
+            if ZjoilzStreamable.Emotes.Griddy then 
                 local Griddy = Instance.new("Animation")
                 Griddy.AnimationId = AnimationIds.Griddy
                 local GriddyTrack = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Griddy)
@@ -999,7 +999,7 @@ end)
 
 
 
-if Streamable.Main.FindBestServer then
+if ZjoilzStreamable.Main.FindBestServer then
     HTTPService = game:GetService("HttpService")
     local TeleportService = game:GetService("TeleportService")
     local StatsService = game:GetService("Stats")
@@ -1049,10 +1049,10 @@ if Streamable.Main.FindBestServer then
 end
 
 
-if Streamable.MemorySpoofer.MemSpoofer then
+if ZjoilzStreamable.MemorySpoofer.MemSpoofer then
     local Settings = {
-        range1 = Streamable.MemorySpoofer.Minimum,
-        range2 = Streamable.MemorySpoofer.Maximum,
+        range1 = ZjoilzStreamable.MemorySpoofer.Minimum,
+        range2 = ZjoilzStreamable.MemorySpoofer.Maximum,
         
     }
 
@@ -1070,11 +1070,11 @@ if Streamable.MemorySpoofer.MemSpoofer then
 end
 
 Mouse.KeyDown:Connect(function(Key)
-    if Key == (string.lower(Streamable.Blink.BlinkKeybind))then
-        if Streamable.Blink.Enabled then
+    if Key == (string.lower(ZjoilzStreamable.Blink.BlinkKeybind))then
+        if ZjoilzStreamable.Blink.Enabled then
             settings():GetService("NetworkSettings").IncomingReplicationLag = 99999
             print('blinking...')
-            wait(Streamable.Blink.BlinkDuration)
+            wait(ZjoilzStreamable.Blink.BlinkDuration)
             settings():GetService("NetworkSettings").IncomingReplicationLag = 0
         end
     end
@@ -1086,9 +1086,9 @@ local Players = game:GetService("Players")
 local UserInputService = game:GetService("UserInputService")
 local RunService = game:GetService("RunService")
 local Camera = workspace.CurrentCamera
-local Toggle = getgenv().Streamable.Spin.Toggle
-local RotationSpeed = getgenv().Streamable.Spin.RotationSpeed
-local Keybind = getgenv().Streamable.Spin.Keybind
+local Toggle = getgenv().ZjoilzStreamable.Spin.Toggle
+local RotationSpeed = getgenv().ZjoilzStreamable.Spin.RotationSpeed
+local Keybind = getgenv().ZjoilzStreamable.Spin.Keybind
 
 local function OnKeyPress(Input, GameProcessedEvent)
     if Input.KeyCode == Keybind and not GameProcessedEvent then 
@@ -1125,6 +1125,18 @@ RunService.RenderStepped:Connect(RotateCamera)
 local localplayer = game:GetService"Players".LocalPlayer
 local uis = game:GetService"UserInputService"
 
+local cheats = {
+	b_b = ZjoilzStreamable.Esp.Bounding_Box;
+	b_f = ZjoilzStreamable.Esp.Fill_Box;
+	b_f_t = ZjoilzStreamable.Esp.Fill_Transparency;
+	b_sd = ZjoilzStreamable.Esp.Show_Distance;
+	b_sn = ZjoilzStreamable.Esp.Show_Name;
+	b_sh = ZjoilzStreamable.Esp.Show_Health;
+	b_ht = ZjoilzStreamable.Esp.Health_Type;
+	b_rt = true;
+	b_tc = true;
+}
+
 
 
 
@@ -1144,13 +1156,13 @@ local uis = game:GetService"UserInputService"
 
 
 
-if Streamable.Main.Gui then
+if ZjoilzStreamable.Main.Gui then
 local Library = loadstring(game:HttpGet(''))()
 local ThemeManager = loadstring(game:HttpGet(''))()
 local SaveManager = loadstring(game:HttpGet(''))()
 
 local Window = Library:CreateWindow({
-    Title = 'Streamable ; 1.0.2',
+    Title = 'ZjoilzStreamable ; 1.0.2',
     Center = true, 
     AutoShow = true,
 })
@@ -1168,16 +1180,16 @@ local AimingLeftBox = Tabs.Aiming:AddLeftGroupbox('Silent')
 
 AimingLeftBox:AddToggle('SilentToggle', {
     Text = 'Silent Aim',
-    Default = Streamable.Silent.Enabled, -- Default value (true / false)
+    Default = ZjoilzStreamable.Silent.Enabled, -- Default value (true / false)
     Tooltip = 'Enables/Disables Silent Aim', -- Information shown when you hover over the toggle
 })
 
 Toggles.SilentToggle:OnChanged(function()
-    getgenv().Streamable.Silent.Enabled = Toggles.SilentToggle.Value
+    getgenv().ZjoilzStreamable.Silent.Enabled = Toggles.SilentToggle.Value
 end)
 
 AimingLeftBox:AddInput('SilentKeybindText', {
-    Default = Streamable.Silent.Keybind,
+    Default = ZjoilzStreamable.Silent.Keybind,
     Numeric = false, -- true / false, only allows numbers
     Finished = true, -- true / false, only calls callback when you press enter
 
@@ -1189,17 +1201,17 @@ AimingLeftBox:AddInput('SilentKeybindText', {
 })
 
 Options.SilentKeybindText:OnChanged(function()
-    getgenv().Streamable.Silent.Keybind = Options.SilentKeybindText.Value
+    getgenv().ZjoilzStreamable.Silent.Keybind = Options.SilentKeybindText.Value
 end)
 
 AimingLeftBox:AddToggle('UseKeybindToggle', {
     Text = 'UseKeybind',
-    Default = Streamable.Silent.UseKeybind, -- Default value (true / false)
+    Default = ZjoilzStreamable.Silent.UseKeybind, -- Default value (true / false)
     Tooltip = 'Enables/Disables Use Keybind', -- Information shown when you hover over the toggle
 })
 
 Toggles.UseKeybindToggle:OnChanged(function()
-    getgenv().Streamable.Silent.UseKeybind = Toggles.UseKeybindToggle.Value
+    getgenv().ZjoilzStreamable.Silent.UseKeybind = Toggles.UseKeybindToggle.Value
 end)
 
 AimingLeftBox:AddDropdown('PartDrop', {
@@ -1212,21 +1224,21 @@ AimingLeftBox:AddDropdown('PartDrop', {
 })
 
 Options.PartDrop:OnChanged(function()
-    getgenv().Streamable.Silent.Part = Options.PartDrop.Value
+    getgenv().ZjoilzStreamable.Silent.Part = Options.PartDrop.Value
 end)
 
 AimingLeftBox:AddToggle('ClosestPartToggle', {
     Text = 'ClosestPart',
-    Default = Streamable.Silent.ClosestPart, -- Default value (true / false)
+    Default = ZjoilzStreamable.Silent.ClosestPart, -- Default value (true / false)
     Tooltip = 'Enables/Disables Use Keybind', -- Information shown when you hover over the toggle
 })
 
 Toggles.ClosestPartToggle:OnChanged(function()
-    getgenv().Streamable.Silent.ClosestPart = Toggles.ClosestPartToggle.Value
+    getgenv().ZjoilzStreamable.Silent.ClosestPart = Toggles.ClosestPartToggle.Value
 end)
 
 AimingLeftBox:AddInput('PredText', {
-    Default = Streamable.Silent.Prediction,
+    Default = ZjoilzStreamable.Silent.Prediction,
     Numeric = true, -- true / false, only allows numbers
     Finished = true, -- true / false, only calls callback when you press enter
 
@@ -1238,27 +1250,27 @@ AimingLeftBox:AddInput('PredText', {
 })
 
 Options.PredText:OnChanged(function()
-    getgenv().Streamable.Silent.Prediction = Options.PredText.Value
+    getgenv().ZjoilzStreamable.Silent.Prediction = Options.PredText.Value
 end)
 
 AimingLeftBox:AddToggle('AutoPredToggle', {
     Text = 'AutoPred',
-    Default = Streamable.AutoPred.Enabled, -- Default value (true / false)
+    Default = ZjoilzStreamable.AutoPred.Enabled, -- Default value (true / false)
     Tooltip = 'Enables/Disables Use Keybind', -- Information shown when you hover over the toggle
 })
 
 Toggles.AutoPredToggle:OnChanged(function()
-    getgenv().Streamable.AutoPred.Enabled = Toggles.AutoPredToggle.Value
+    getgenv().ZjoilzStreamable.AutoPred.Enabled = Toggles.AutoPredToggle.Value
 end)
 
 AimingLeftBox:AddToggle('RangePredToggle', {
     Text = 'RangePred',
-    Default = Streamable.Range.Prediction.Enabled, -- Default value (true / false)
+    Default = ZjoilzStreamable.Range.Prediction.Enabled, -- Default value (true / false)
     Tooltip = 'Enable/Disables RangePred', -- Information shown when you hover over the toggle
 })
 
 Toggles.RangePredToggle:OnChanged(function()
-    getgenv().Streamable.Range.Prediction.Enabled = Toggles.RangePredToggle.Value
+    getgenv().ZjoilzStreamable.Range.Prediction.Enabled = Toggles.RangePredToggle.Value
 end)
 
 
@@ -1270,7 +1282,7 @@ AimingLeftBox:AddDivider()
 AimingLeftBox:AddSlider('FOVSlid', {
     Text = 'Radius',
 
-    Default = Streamable.FOV.Radius,
+    Default = ZjoilzStreamable.FOV.Radius,
     Min = 5,
     Max = 80,
     Rounding = 1,
@@ -1280,36 +1292,36 @@ AimingLeftBox:AddSlider('FOVSlid', {
 
 AimingLeftBox:AddToggle('VisibleTog', {
     Text = 'Visible',
-    Default = Streamable.FOV.Visible, -- Default value (true / false)
+    Default = ZjoilzStreamable.FOV.Visible, -- Default value (true / false)
     Tooltip = 'Enable/Disables Visible FOV', -- Information shown when you hover over the toggle
 })
 
 Toggles.VisibleTog:OnChanged(function()
-    getgenv().Streamable.FOV.Visible = Toggles.VisibleTog.Value
+    getgenv().ZjoilzStreamable.FOV.Visible = Toggles.VisibleTog.Value
 end)
 
 Options.FOVSlid:OnChanged(function()
-    getgenv().Streamable.FOV.Radius = Options.FOVSlid.Value
+    getgenv().ZjoilzStreamable.FOV.Radius = Options.FOVSlid.Value
 end)
 
 AimingLeftBox:AddToggle('GunFOVToggle', {
     Text = 'GunFOV',
-    Default = Streamable.GunFOV.Enabled, -- Default value (true / false)
+    Default = ZjoilzStreamable.GunFOV.Enabled, -- Default value (true / false)
     Tooltip = 'Enable/Disables GunFOV', -- Information shown when you hover over the toggle
 })
 
 Toggles.GunFOVToggle:OnChanged(function()
-    getgenv().Streamable.GunFOV.Enabled = Toggles.GunFOVToggle.Value
+    getgenv().ZjoilzStreamable.GunFOV.Enabled = Toggles.GunFOVToggle.Value
 end)
 
 AimingLeftBox:AddToggle('RangeFOVToggle', {
     Text = 'RangeFOV',
-    Default = Streamable.Range.FOV.Enabled, -- Default value (true / false)
+    Default = ZjoilzStreamable.Range.FOV.Enabled, -- Default value (true / false)
     Tooltip = 'Enable/Disables RangeFOV', -- Information shown when you hover over the toggle
 })
 
 Toggles.RangeFOVToggle:OnChanged(function()
-    getgenv().Streamable.Range.FOV.Enabled = Toggles.RangeFOVToggle.Value
+    getgenv().ZjoilzStreamable.Range.FOV.Enabled = Toggles.RangeFOVToggle.Value
 end)
 
 AimingLeftBox:AddLabel('Color'):AddColorPicker('ColorPicker', {
@@ -1327,28 +1339,28 @@ AimingLeftBox:AddDivider()
 
 AimingLeftBox:AddToggle('DeathTog', {
     Text = 'Death Check',
-    Default = Streamable.Silent.Checks.DeathCheck, -- Default value (true / false)
+    Default = ZjoilzStreamable.Silent.Checks.DeathCheck, -- Default value (true / false)
     Tooltip = 'Enable/Disables Death Check', -- Information shown when you hover over the toggle
 })
 
 Toggles.DeathTog:OnChanged(function()
-    getgenv().Streamable.Silent.Checks.DeathCheck = Toggles.DeathTog.Value
+    getgenv().ZjoilzStreamable.Silent.Checks.DeathCheck = Toggles.DeathTog.Value
 end)
 
 AimingLeftBox:AddToggle('VisTog', {
     Text = 'VisibleCheck',
-    Default = Streamable.Silent.Checks.VisibleCheck, -- Default value (true / false)
+    Default = ZjoilzStreamable.Silent.Checks.VisibleCheck, -- Default value (true / false)
     Tooltip = 'Enable/Disables Death Check', -- Information shown when you hover over the toggle
 })
 
 Toggles.VisTog:OnChanged(function()
-    getgenv().Streamable.Silent.Checks.VisibleCheck = Toggles.VisTog.Value
+    getgenv().ZjoilzStreamable.Silent.Checks.VisibleCheck = Toggles.VisTog.Value
 end)
 
 local RightGroupBox = Tabs.Aiming:AddRightGroupbox('Aimbot')
 
 RightGroupBox:AddInput('MyTextboxKey', {
-    Default = Streamable.Aimbot.Keybind,
+    Default = ZjoilzStreamable.Aimbot.Keybind,
     Numeric = true, -- true / false, only allows numbers
     Finished = true, -- true / false, only calls callback when you press enter
 
@@ -1377,7 +1389,7 @@ Options.MyDropdown2:OnChanged(function()
 end)
 
 RightGroupBox:AddInput('MyTextboxPred', {
-    Default = Streamable.Aimbot.Prediction,
+    Default = ZjoilzStreamable.Aimbot.Prediction,
     Numeric = true, -- true / false, only allows numbers
     Finished = false, -- true / false, only calls callback when you press enter
 
@@ -1395,7 +1407,7 @@ end)
 
 RightGroupBox:AddToggle('MyToggleSmooth', {
     Text = 'Smoothness',
-    Default = Streamable.Aimbot.Smoothness, -- Default value (true / false)
+    Default = ZjoilzStreamable.Aimbot.Smoothness, -- Default value (true / false)
     Tooltip = 'Smoothness (makes you look more legit)', -- Information shown when you hover over the toggle
 })
 
@@ -1418,13 +1430,13 @@ end)
 
 RightGroupBox:AddToggle('MyToggleGG', {
     Text = 'Range-Smoothness',
-    Default = Streamable.Range.Smoothness.Enabled, -- Default value (true / false)
+    Default = ZjoilzStreamable.Range.Smoothness.Enabled, -- Default value (true / false)
     Tooltip = 'Smoothness based on range', -- Information shown when you hover over the toggle
 })
 
 Toggles.MyToggleGG:OnChanged(function()
     -- here we get our toggle object & then get its value
-    getgenv().Streamable.Range.Smoothness.Enabled = Toggles.MyToggleGG.Value
+    getgenv().ZjoilzStreamable.Range.Smoothness.Enabled = Toggles.MyToggleGG.Value
 end)
 
 
@@ -1479,7 +1491,7 @@ RightGroupBox:AddToggle('MyToggleEE', {
 
 Toggles.MyToggleEE:OnChanged(function()
     -- here we get our toggle object & then get its value
-    getgenv().Streamable.Aimbot.OwnDeathCheck = Toggles.MyToggleEE.Value
+    getgenv().ZjoilzStreamable.Aimbot.OwnDeathCheck = Toggles.MyToggleEE.Value
 end)
 
 
@@ -1503,13 +1515,13 @@ end)
 
 -- Library functions
 -- Sets the watermark visibility
-Library:SetWatermarkVisibility(Streamable.Main.GuiInfo)
+Library:SetWatermarkVisibility(ZjoilzStreamable.Main.GuiInfo)
 
 game:GetService("RunService").Heartbeat:Connect(function() 
         local ping = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString()
         local pingValue = string.split(ping, " ")[1]
         local pingNumber = tonumber(pingValue)
-        Library:SetWatermark('Prediction: ' .. Streamable.Silent.Prediction .. '  Ping: ' .. pingNumber)
+        Library:SetWatermark('Prediction: ' .. ZjoilzStreamable.Silent.Prediction .. '  Ping: ' .. pingNumber)
     end)
 
 Library.KeybindFrame.Visible = false; -- todo: add a function for this
@@ -1559,6 +1571,229 @@ ThemeManager:ApplyToTab(Tabs['UI Settings'])
 end
 -- You can use the SaveManager:LoadAutoloadConfig() to load a config 
 -- which has been marked to be one that auto loads!
+
+local cheatsf = Instance.new("Folder", game.CoreGui) cheatsf.Name = "cheats"
+local espf = Instance.new("Folder", cheatsf) espf.Name = "esp"
+if ZjoilzStreamable.Esp.Enabled then
+    function addEsp(player)
+        local bbg = Instance.new("BillboardGui", espf)
+        bbg.Name = player.Name
+        bbg.AlwaysOnTop = true
+        bbg.Size = UDim2.new(4,0,5.4,0)
+        bbg.ClipsDescendants = false
+        
+        local outlines = Instance.new("Frame", bbg)
+        outlines.Size = UDim2.new(1,0,1,0)
+        outlines.BorderSizePixel = 0
+        outlines.BackgroundTransparency = 1
+        local left = Instance.new("Frame", outlines)
+        left.BorderSizePixel = 0
+        left.Size = UDim2.new(0,1,1,0)
+        local right = left:Clone()
+        right.Parent = outlines
+        right.Size = UDim2.new(0,-1,1,0)
+        right.Position = UDim2.new(1,0,0,0)
+        local up = left:Clone()
+        up.Parent = outlines
+        up.Size = UDim2.new(1,0,0,1)
+        local down = left:Clone()
+        down.Parent = outlines
+        down.Size = UDim2.new(1,0,0,-1)
+        down.Position = UDim2.new(0,0,1,0)
+        
+        local info = Instance.new("BillboardGui", bbg)
+        info.Name = "info"
+        info.Size = UDim2.new(3,0,0,54)
+        info.StudsOffset = Vector3.new(3.6,-3,0)
+        info.AlwaysOnTop = true
+        info.ClipsDescendants = false
+        local namelabel = Instance.new("TextLabel", info)
+        namelabel.Name = "namelabel"
+        namelabel.BackgroundTransparency = 1
+        namelabel.TextStrokeTransparency = 0
+        namelabel.TextXAlignment = Enum.TextXAlignment.Left
+        namelabel.Size = UDim2.new(0,100,0,18)
+        namelabel.Position = UDim2.new(0,0,0,0)
+        namelabel.Text = player.Name
+        local distancel = Instance.new("TextLabel", info)
+        distancel.Name = "distancelabel"
+        distancel.BackgroundTransparency = 1
+        distancel.TextStrokeTransparency = 0
+        distancel.TextXAlignment = Enum.TextXAlignment.Left
+        distancel.Size = UDim2.new(0,100,0,18)
+        distancel.Position = UDim2.new(0,0,0,18)
+        local healthl = Instance.new("TextLabel", info)
+        healthl.Name = "healthlabel"
+        healthl.BackgroundTransparency = 1
+        healthl.TextStrokeTransparency = 0
+        healthl.TextXAlignment = Enum.TextXAlignment.Left
+        healthl.Size = UDim2.new(0,100,0,18)
+        healthl.Position = UDim2.new(0,0,0,36)
+        
+        local uill = Instance.new("UIListLayout", info)
+        
+        local forhealth = Instance.new("BillboardGui", bbg)
+        forhealth.Name = "forhealth"
+        forhealth.Size = UDim2.new(5,0,6,0)
+        forhealth.AlwaysOnTop = true
+        forhealth.ClipsDescendants = false
+        
+        local healthbar = Instance.new("Frame", forhealth)
+        healthbar.Name = "healthbar"
+        healthbar.BackgroundColor3 = Color3.fromRGB(40,40,40)
+        healthbar.BorderColor3 = Color3.fromRGB(0,0,0)
+        healthbar.Size = UDim2.new(0.04,0,0.9,0)
+        healthbar.Position = UDim2.new(0,0,0.05,0)
+        local bar = Instance.new("Frame", healthbar)
+        bar.Name = "bar"
+        bar.BorderSizePixel = 0
+        bar.BackgroundColor3 = Color3.fromRGB(94,255,69)
+        bar.AnchorPoint = Vector2.new(0,1)
+        bar.Position = UDim2.new(0,0,1,0)
+        bar.Size = UDim2.new(1,0,1,0)
+        
+        local co = coroutine.create(function()
+            while wait(0.1) do
+                if (player.Character and player.Character:FindFirstChild"HumanoidRootPart") then
+                    bbg.Adornee = player.Character.HumanoidRootPart
+                    info.Adornee = player.Character.HumanoidRootPart
+                    forhealth.Adornee = player.Character.HumanoidRootPart
+                    
+                    if (player.Team ~= localplayer.Team) then
+                        bbg.Enabled = true
+                        info.Enabled = true
+                        forhealth.Enabled = true
+                    end
+                    if player.Character:FindFirstChild("ForceField") then
+                        outlines.BackgroundTransparency = 0.4
+                        left.BackgroundTransparency = 0.4
+                        right.BackgroundTransparency = 0.4
+                        up.BackgroundTransparency = 0.4
+                        down.BackgroundTransparency = 0.4
+                        healthl.TextTransparency = 0.4
+                        healthl.TextStrokeTransparency = 0.8
+                        distancel.TextTransparency = 0.4
+                        distancel.TextStrokeTransparency = 0.8
+                        namelabel.TextTransparency = 0.4
+                        namelabel.TextStrokeTransparency = 0.8
+                        bar.BackgroundTransparency = 0.4
+                        healthbar.BackgroundTransparency = 0.8
+                    else
+                        outlines.BackgroundTransparency = 0
+                        left.BackgroundTransparency = 0
+                        right.BackgroundTransparency = 0
+                        up.BackgroundTransparency = 0
+                        down.BackgroundTransparency = 0
+                        healthl.TextTransparency = 0
+                        healthl.TextStrokeTransparency = 0
+                        distancel.TextTransparency = 0
+                        distancel.TextStrokeTransparency = 0
+                        namelabel.TextTransparency = 0
+                        namelabel.TextStrokeTransparency = 0
+                        bar.BackgroundTransparency = 0
+                        healthbar.BackgroundTransparency = 0
+                    end
+                    if cheats.b_b == true then
+                        outlines.Visible = true
+                    else
+                        outlines.Visible = false
+                    end
+                    if cheats.b_f == true then
+                        if player.Character:FindFirstChild("ForceField") then
+                            outlines.BackgroundTransparency = 0.9
+                        else
+                            outlines.BackgroundTransparency = cheats.b_f_t
+                        end
+                    else
+                        outlines.BackgroundTransparency = 1
+                    end
+                    if cheats.b_sh == true then
+                        if (player.Character:FindFirstChild"Humanoid") then
+                            healthl.Text = "Health: "..math.floor(player.Character:FindFirstChild"Humanoid".Health)
+                            healthbar.bar.Size = UDim2.new(1,0,player.Character:FindFirstChild"Humanoid".Health/player.Character:FindFirstChild"Humanoid".MaxHealth,0)
+                        end
+                        if cheats.b_ht == "Text" then
+                            healthbar.Visible = false
+                            healthl.Visible = true
+                        end
+                        if cheats.b_ht == "Bar" then
+                            healthl.Visible = false
+                            healthbar.Visible = true
+                        end
+                        if cheats.b_ht == "Both" then
+                            healthl.Visible = true
+                            healthbar.Visible = true
+                        end
+                    else
+                        healthl.Visible = false
+                        healthbar.Visible = false
+                    end
+                    if cheats.b_sn then
+                        namelabel.Visible = true
+                    else
+                        namelabel.Visible = false
+                    end
+                    if cheats.b_sd == true then
+                        distancel.Visible = true
+                        if (localplayer.Character and localplayer.Character:FindFirstChild"HumanoidRootPart") then
+                            distancel.Text = "Distance: "..math.floor(0.5+(localplayer.Character:FindFirstChild"HumanoidRootPart".Position - player.Character:FindFirstChild"HumanoidRootPart".Position).magnitude)
+                        end
+                    else
+                        distancel.Visible = false
+                    end
+                    if cheats.b_rt == true then
+                        if (player.Team == localplayer.Team) then
+                            bbg.Enabled = true
+                            info.Enabled = true
+                            forhealth.Enabled = true
+                        end
+                    else
+                        if (player.Team == localplayer.Team) then
+                            bbg.Enabled = false
+                            info.Enabled = false
+                            forhealth.Enabled = false
+                        end
+                    end
+                    if cheats.b_tc == true then
+                        outlines.BackgroundColor3 = player.TeamColor.Color
+                        left.BackgroundColor3 = player.TeamColor.Color
+                        right.BackgroundColor3 = player.TeamColor.Color
+                        up.BackgroundColor3 = player.TeamColor.Color
+                        down.BackgroundColor3 = player.TeamColor.Color
+                        healthl.TextColor3 = player.TeamColor.Color
+                        distancel.TextColor3 = player.TeamColor.Color
+                        namelabel.TextColor3 = player.TeamColor.Color
+                    else
+                        if (player.Team == localplayer.Team) then
+                            outlines.BackgroundColor3 = Color3.fromRGB(ct_r.Text, ct_g.Text, ct_b.Text)
+                            left.BackgroundColor3 = Color3.fromRGB(ct_r.Text, ct_g.Text, ct_b.Text)
+                            right.BackgroundColor3 = Color3.fromRGB(ct_r.Text, ct_g.Text, ct_b.Text)
+                            up.BackgroundColor3 = Color3.fromRGB(ct_r.Text, ct_g.Text, ct_b.Text)
+                            down.BackgroundColor3 = Color3.fromRGB(ct_r.Text, ct_g.Text, ct_b.Text)
+                            healthl.TextColor3 = Color3.fromRGB(ct_r.Text, ct_g.Text, ct_b.Text)
+                            distancel.TextColor3 = Color3.fromRGB(ct_r.Text, ct_g.Text, ct_b.Text)
+                            namelabel.TextColor3 = Color3.fromRGB(ct_r.Text, ct_g.Text, ct_b.Text)
+                        else
+                            outlines.BackgroundColor3 = Color3.fromRGB(ce_r.Text, ce_g.Text, ce_b.Text)
+                            left.BackgroundColor3 = Color3.fromRGB(ce_r.Text, ce_g.Text, ce_b.Text)
+                            right.BackgroundColor3 = Color3.fromRGB(ce_r.Text, ce_g.Text, ce_b.Text)
+                            up.BackgroundColor3 = Color3.fromRGB(ce_r.Text, ce_g.Text, ce_b.Text)
+                            down.BackgroundColor3 = Color3.fromRGB(ce_r.Text, ce_g.Text, ce_b.Text)
+                            healthl.TextColor3 = Color3.fromRGB(ce_r.Text, ce_g.Text, ce_b.Text)
+                            distancel.TextColor3 = Color3.fromRGB(ce_r.Text, ce_g.Text, ce_b.Text)
+                            namelabel.TextColor3 = Color3.fromRGB(ce_r.Text, ce_g.Text, ce_b.Text)
+                        end
+                    end
+                end
+                if not (game:GetService"Players":FindFirstChild(player.Name)) then
+                    print(player.Name.." has left. Clearing esp.")
+                    espf:FindFirstChild(player.Name):Destroy()
+                    coroutine.yield()
+                end
+            end
+        end)
+        coroutine.resume(co)
+    end
 
     --main
     do
