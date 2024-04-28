@@ -124,6 +124,7 @@ if Streamable.Macro.Enabled then
     end
 end
 
+
 if Streamable.InventorySorter.Enabled == true then 
 local services = {
    ["Players"] = game:GetService("Players"),
