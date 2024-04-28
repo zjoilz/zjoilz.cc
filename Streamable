@@ -1126,13 +1126,13 @@ local localplayer = game:GetService"Players".LocalPlayer
 local uis = game:GetService"UserInputService"
 
 local cheats = {
-	b_b = Streamable.Esp.Bounding_Box;
-	b_f = Streamable.Esp.Fill_Box;
-	b_f_t = Streamable.Esp.Fill_Transparency;
-	b_sd = Streamable.Esp.Show_Distance;
-	b_sn = Streamable.Esp.Show_Name;
-	b_sh = Streamable.Esp.Show_Health;
-	b_ht = Streamable.Esp.Health_Type;
+	b_b = Streamable.Esp.Box;
+	b_f = Streamable.Esp.Fill;
+	b_f_t = Streamable.Esp.Transparency;
+	b_sd = Streamable.Esp.Distance;
+	b_sn = Streamable.Esp.Names;
+	b_sh = Streamable.Esp.Health;
+	b_ht = Streamable.Esp.Type;
 	b_rt = true;
 	b_tc = true;
 }
