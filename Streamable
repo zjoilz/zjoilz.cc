@@ -124,6 +124,40 @@ if Streamable.Macro.Enabled then
     end
 end
 
+if Streamable.Startup.Intro then
+    local Tracer = Drawing.new("Image")
+    local Blur = Instance.new("BlurEffect")
+    local screenSize = Services.Workspace.CurrentCamera.ViewportSize
+    local centerPosition = Vector2.new(screenSize.X / 2, screenSize.Y / 2)
+    Tracer.Position = centerPosition
+    Tracer.Size = Vector2.new(0, 0)
+    Tracer.Visible = true
+    Tracer.Data = game:HttpGet("https://i.ibb.co/dcFvJVx/Vision-2-PFP-2-copie.png")
+    Blur.Size = 0
+    Blur.Parent = Services.Workspace.CurrentCamera
+    for i = 1, 100 do
+        Tracer.Size = Tracer.Size + (Vector2.new(540, 540) - Tracer.Size) / 20
+        Tracer.Position = centerPosition - Tracer.Size / 2
+        if Blur.Size ~= 10 then
+            Blur.Size = Blur.Size + 1
+        end
+        task.wait()
+    end
+    Tracer.Size = Vector2.new(540, 540)
+    Tracer.Position = centerPosition - Tracer.Size / 2
+    wait(0.75)
+    for i = 1, 85 do
+        if Tracer.Transparency ~= 0 then
+            Tracer.Transparency = Tracer.Transparency - 0.01
+        end
+        if Blur.Size ~= 0 then
+            Blur.Size = Blur.Size - 1
+        end
+        task.wait()
+    end
+    Tracer.Size = Vector2.new(0, 0)
+    Blur:Destroy()
+end
 
 if Streamable.InventorySorter.Enabled == true then 
 local services = {
