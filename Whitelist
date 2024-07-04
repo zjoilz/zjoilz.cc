@@ -18,7 +18,6 @@ end
 
 if isWhitelisted then
    loadstring(game:HttpGet("https://raw.githubusercontent.com/zjoilz/zjoilz.cc/main/999"))()
-elseif
-if notwhitelisted then
+elseif if notwhitelisted then
     game.Players.LocalPlayer:Kick("You arent whitelisted..")
 end
